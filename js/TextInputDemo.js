@@ -1,6 +1,8 @@
 import React, {Component} from "react";
+import callOnceInInterval from './CallOnceInInterval';
 
 import {StyleSheet, Text, View,TextInput} from "react-native";
+import LayoutDemo from "./LayoutDemo";
 
 class TextInputDemo extends Component{
     constructor(props){
@@ -8,6 +10,7 @@ class TextInputDemo extends Component{
         this.state = {text:''};
     }
     render(){
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <View style={styles.flexDirectionRow}>
@@ -19,7 +22,7 @@ class TextInputDemo extends Component{
                         placeholderTextColor={'#7f7f7f'}
                         onChangeText={(text) => this.setState({text})}/>
                     <View style={styles.btnview}>
-                        <Text style={styles.searchbtn} onPress={this.doSearch.bind(this)}>搜索</Text>
+                        <Text style={styles.searchbtn} onPress={()=>callOnceInInterval(()=>navigate('LayoutDemo'))}>搜索</Text>
                     </View>
                 </View>
 
