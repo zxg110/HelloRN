@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import callOnceInInterval from './CallOnceInInterval';
+import callOnceInInterval from './widget/CallOnceInInterval';
 
 import {StyleSheet, Text, View,TextInput} from "react-native";
 import LayoutDemo from "./LayoutDemo";
